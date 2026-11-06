@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 22" role="img"><style>
+.smoke{fill:none;stroke:#fff;stroke-opacity:.38;stroke-width:3;stroke-linecap:round;stroke-dasharray:140;stroke-dashoffset:140;animation:rise 5.5s ease-in-out infinite}
+@keyframes rise{0%{stroke-dashoffset:140;opacity:0}25%{opacity:1}100%{stroke-dashoffset:-140;opacity:0}}
+.glow{animation:glow 2.4s ease-in-out infinite alternate}
+@keyframes glow{from{opacity:.65}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.smoke{animation:none;stroke-dashoffset:0;opacity:.45}.glow{animation:none}}
+</style><defs></defs><rect width="72" height="22" fill="#1E130E"/><rect width="72" height="2.5" fill="#E3A72F"/><rect y="19.5" width="72" height="2.5" fill="#E3A72F"/><polygon points="12,4 21,11 12,18 3,11" fill="#5E8A3A"/><polygon points="12,8 16,11 12,14 8,11" fill="#1E130E"/><polygon points="36,4 45,11 36,18 27,11" fill="#E3A72F"/><polygon points="36,8 40,11 36,14 32,11" fill="#1E130E"/><polygon points="60,4 69,11 60,18 51,11" fill="#A22A2E"/><polygon points="60,8 64,11 60,14 56,11" fill="#1E130E"/></svg>

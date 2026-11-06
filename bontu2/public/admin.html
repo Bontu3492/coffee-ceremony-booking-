@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>coffee-ceremony admin</title>
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem;margin:1rem 0 1.5rem}
+.stat{background:#fff;border:1.5px solid var(--line);border-radius:1rem;padding:1rem}
+.stat b{display:block;font:400 1.9rem var(--display)}
+.filters{display:flex;gap:.7rem;flex-wrap:wrap;align-items:end;margin-bottom:1rem}
+.filters .field{margin:0;min-width:140px;flex:1}
+.tbl{width:100%;border-collapse:collapse;background:#fff;border:1.5px solid var(--line);border-radius:1rem;overflow:hidden;font-size:.95rem}
+.tbl th,.tbl td{padding:.6rem .7rem;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl th{background:var(--tint)}
+.scroll{overflow-x:auto}
+.acts{display:flex;gap:.3rem;flex-wrap:wrap}
+.login{max-width:380px;margin:4rem auto}
+.hidden{display:none}
+</style>
+</head>
+<body>
+<header class="top"><a class="brand" href="/"><img src="img/logo.svg" alt="" width="40" height="40"><span>Bontu admin</span></a>
+  <button id="out" class="lang hidden" style="margin-left:auto">Sign out</button></header>
+<div class="band"></div>
+<main class="wrap" style="padding-top:1.5rem">
+  <form id="login" class="card login"><h2>Sign in</h2><div class="field"><label for="pw">Admin password</label><input id="pw" type="password" autocomplete="current-password" required></div>
+    <div id="lerr" class="msg"></div><button class="btn" type="submit">Sign in</button></form>
+  <div id="app" class="hidden">
+    <div class="stats" id="stats"></div>
+    <div class="filters">
+      <div class="field"><label for="fq">Search</label><input id="fq" placeholder="Name, phone or BC-…"></div>
+      <div class="field"><label for="fs">Status</label><select id="fs"><option value="">All</option><option>pending</option><option>confirmed</option><option>completed</option><option>cancelled</option></select></div>
+      <div class="field"><label for="ff">From</label><input id="ff" type="date"></div>
+      <div class="field"><label for="ft">To</label><input id="ft" type="date"></div>
+      <button class="btn dark sm" id="csv" type="button">Export CSV</button>
+    </div>
+    <div class="scroll"><table class="tbl"><thead><tr><th>Ref</th><th>When</th><th>Customer</th><th>Event</th><th>Total</th><th>Status</th><th>Actions</th></tr></thead><tbody id="rows"></tbody></table></div>
+    <h2 style="margin-top:2.5rem">Closed dates</h2>
+    <form id="blk" class="filters"><div class="field"><label for="bd">Date</label><input id="bd" type="date" required></div><div class="field"><label for="br">Reason</label><input id="br" placeholder="Holiday, fully booked…"></div><button class="btn sm" type="submit">Block date</button></form>
+    <ul id="blist"></ul>
+  </div>
+</main>
+<script src="js/admin.js"></script>
+</body>
+</html>
